@@ -1,0 +1,348 @@
+@charset "UTF-8"    ;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+body {font-family: 'Noto Sans KR', 'Malgun Gothic','맑은 고딕',sans-serif; font-size: 14px;}
+
+button {
+    border: 0;
+    cursor: pointer;
+    background: none;
+}
+.icon_friends { 
+    display: block; 
+    background:url(../img/ico_friends.png)no-repeat 0 0 / 700px 800px;
+    overflow: hidden;
+    font-size: 1px;
+    color: transparent;
+}
+.icon_dot {
+    display: inline-block;
+    width: 9px; height: 9px;
+    background:#ff2600;
+    font-size: 1px;
+    color: transparent;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+#container {
+    max-width: 640px; min-width: 320px;
+    margin: 0 auto;
+    height: 2000px;
+    background: linear-gradient(to bottom, #fff, #ef9383, #fffaba);
+}
+
+header {
+    position:fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    max-width: 640px; min-width: 320px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    line-height: 46px;
+    height: 46px;
+}
+h1 a { 
+    display: inline-block;
+    width: 147px; height: 24px;
+    background:url('../img/logo_kakaofriends.png')no-repeat 0 0/ 147px 24px;
+}
+h1 a span {
+    display: none;
+}
+
+.topLeft, .topRight {
+    position: absolute;
+    top: 6px;
+}
+.topLeft {
+    left: 12px;
+}
+.topLeft > button {
+    padding: 5px;
+}
+.topLeft .icon_friends {
+    width: 24px; height: 24px;
+    background-position: -520px -60px;
+}
+.topLeft .icon_dot {
+    position: absolute;
+    top:5px; right: 3px;
+}
+.topRight {
+    right: 12px;
+}
+.topRight > button {
+    padding: 5px;
+}
+.topRight .icon_search.icon_friends {
+    width: 24px; height: 24px;
+    background-position: -40px -20px;
+}
+.topRight .icon_language.icon_friends {
+    width: 24px; height: 24px;
+    background-position: -440px -60px;
+}
+
+nav {
+    border-bottom: 1px solid #d5d5d5;
+}
+.list_tab {
+    display: flex;
+}
+.list_tab li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.list_tab li a {
+    display: block;
+    line-height: 43px;
+    font-size: 16px;
+}
+.list_tab li a.on{
+    font-weight:700;
+}
+.list_tab li a.on::after{
+    display: block;
+    content: "";
+    width: 100%; height: 4px;
+    background: #000;
+    position: relative;
+    bottom: -1px;
+}
+.list_tab li .icon_dot {
+    position:absolute;
+    top: 10px; left: calc(50% + 13px);
+}
+
+main {
+    padding-top: 90px;
+}
+
+article {
+    background: #fff;
+}
+article > .box {
+    padding: 20px;
+}
+.article_head {
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+.article_head > .profile {
+    float: left;
+    display: inline-block;
+    width: 40px; height: 40px;
+    text-indent: -9999px;
+    border-radius: 15px;
+    background-image: url('../img/character/character_20220531165306_96.png');
+    background-size: cover;
+}
+.article_head .info {
+    padding-left: 48px;
+}
+.article_head .info strong {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+}
+.article_head .info .txt_time{
+    font-size: 13px;
+    color: #808080;
+}
+.article_con {
+}
+.article_con img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+/* 좌측 슬라이더 메뉴 부분 */
+.dark {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:10;
+    /* margin 설정, 안쪽으로 나 자신(꽉 차있는 상태)이 줄어들면서 표현*/
+}
+.gnb_open {
+    position: fixed;
+    top: 0; left: -304px;
+    bottom: 0;
+    width: 304px;
+    background: #fff;
+    overflow: hidden;
+    z-index:11;
+}
+.gnb_open .inner {
+    width: 304px; height: 100%;
+    overflow-y: scroll;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+.gnb_open img {
+    width: 100%;
+}
+
+.info_user {
+    padding: 35px 5px  24px 23px;
+    overflow: hidden;
+}
+.info_user a {
+    line-height: 24px;
+}
+.info_user a.login {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+}
+.info_user a.link_inquire {
+    float: right;
+}
+.info_user a.link_inquire .icon_arrow_right {
+    display: inline-block;
+    width: 16px; height: 14px;
+    background-position: -320px 0 ;
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.link_banner {
+    display: block;
+    margin-left: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.list_menu {
+    padding-top: 16px;
+}
+.list_menu > li {}
+.list_menu .btn_menu {
+    display: block;
+    width: 100%; padding: 0 24px;
+    line-height: 48px;
+    font-size: 16px;
+    text-align: left;
+    overflow: hidden;
+}
+.gnb_open .line {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom:1px solid #d5d5d5;
+}
+.list_menu .icon_arrow {
+    float: right;
+    margin-top: 14px;
+    width:16px; height: 16px;
+    background-position: -180px 0;
+}
+.list_menu .icon_arrow.on{
+    background-position: -340px 0;
+}
+
+.box_banner {
+    padding: 30px 0 24px 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.link_login {
+    display: block;
+    text-align: center;
+    line-height: 24px;
+    color: #9a9696;
+    padding: 20px 0 150px 0;
+}
+.link_login .icon_lock {
+    display: inline-block;
+    background-position:-560px -20px;
+    width: 24px; height: 24px;
+    vertical-align: top;
+    margin-right: 3px;
+}
+
+.charactorWrap {
+    display: none;
+}
+.list_charactor {
+    width: 100%;
+    padding: 16px 0 0 10px;
+}
+.list_charactor li {
+    float: left;
+    width: 25%;
+    padding-bottom: 20px;
+}
+.list_charactor li a {
+    display: block;
+    padding: 0 10px;
+}
+.list_charactor .img_charactor {
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background:no-repeat 50% 50% / cover;
+    border-radius: 50%;
+}
+.list_charactor .txt_charactor {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 8px;
+    color: #808080;
+}
+
+.charactor01 .img_charactor {background-image: url('../img/character/ryan.png');}
+.charactor02 .img_charactor {background-image: url('../img/character/apech.png');}
+.charactor03 .img_charactor {background-image: url('../img/character/muji.png');}
+.charactor04 .img_charactor {background-image: url('../img/character/prodo.png');}
+.charactor05 .img_charactor {background-image: url('../img/character/neo.png');}
+
+.charactor01:hover .img_charactor {background-image: url('../img/character/ryan1.png');}
+.charactor02:hover .img_charactor {background-image: url('../img/character/apech1.png');}
+.charactor03:hover .img_charactor {background-image: url('../img/character/muji1.png');}
+.charactor04:hover .img_charactor {background-image: url('../img/character/prodo1.png');}
+.charactor05:hover .img_charactor {background-image: url('../img/character/neo1.png');}
+
+.loginPop {
+    display: none;
+    position: absolute;
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px; 
+    background:#fff;
+    border-radius: 16px;
+    text-align: center;
+    padding: 50px;
+    z-index: 101;
+}
+.loginPop img {
+    width: 128px;
+}
+.loginPop strong {
+    display: block;
+    font-size: 1.2em;
+    margin: 10px 0 15px 0;
+}
+.loginPop p {}
+.loginPop button {
+    background: #ffeb00;
+    padding: 10px 0;    
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 40px;
+    margin-top: 15px;
+}
+.loginPop button .icon_talk {
+    display:inline-block;
+    width: 24px; height: 24px;
+    background-position: -480px -20px;
+    vertical-align: top;
+}
